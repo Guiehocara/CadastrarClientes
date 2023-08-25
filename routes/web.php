@@ -32,7 +32,9 @@ Route::get('/listarClientes', [Cliente::class, 'listarClientes'])->middleware('a
 Route::get('/excluir/{id}', [Cliente::class, 'excluirCliente'])->middleware('auth');
 
 
-Route::get('/atualizar/{id}', [Cliente::class, 'atualizarCliente'])->middleware('auth');
+Route::get('/atualizar/{id}', [Cliente::class, 'atualizarClienteView'])->middleware('auth');
+
+Route::post('/atualizar/{id}', [Cliente::class, 'atualizarCliente'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

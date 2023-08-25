@@ -24,6 +24,16 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+				<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('cadastrarCliente')" :active="request()->routeIs('cadastrarCliente')">
+                        {{ __('Cadastrar cliente') }}
+                    </x-nav-link>
+                </div>
+				<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('listarClientes')" :active="request()->routeIs('listarClientes')">
+                        {{ __('listar clientes') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -106,24 +116,30 @@
         </div>
     </div>
 </nav>
-<form action="/atualizar/{{$cliente->id}}" method="post">
-@csrf
-    <label for="" class="form-control">Nome</label>
-    <input type="text" name="nome" class="form-control" id="" value="{{$cliente->Nome}}">
-    <label for="" class="form-control">Endereco</label>
-    <input type="text" name="endereco" class="form-control" id="" value="{{$cliente->Endereco}}">
-    <label for="" class="form-control">Rua</label>
-    <input type="text" name="rua" class="form-control" id="" value="{{$cliente->Rua}}">
-    <label for="" class="form-control">Bairro</label>
-    <input type="text" name="bairro" class="form-control" id="" value="{{$cliente->Bairro}}">
-    <label for="" class="form-control">Cidade</label>
-    <input type="text" name="cidade" class="form-control" id="" value="{{$cliente->Cidade}}">
-    <label for="" class="form-control">Estado</label>
-    <input type="text" name="estado" class="form-control" id="" value="{{$cliente->Estado}}">
-    <label for="" class="form-control">Pais</label>
-    <input type="text" name="pais" class="form-control" id="" value="{{$cliente->Pais}}">
-    <input type="submit" class="form-control" value="Enviar">
+<div class="container">
+	<div class="row">
+		<div class="col">
+		<form action="/atualizar/{{$cliente->id}}" method="post">
+		@csrf
+			<label for="" class="form-label">Nome</label>
+			<input type="text" name="nome" class="form-control" id="" value="{{$cliente->Nome}}">
+			<label for="" class="form-label">Endereco</label>
+			<input type="text" name="endereco" class="form-control" id="" value="{{$cliente->Endereco}}">
+			<label for="" class="form-label">Rua</label>
+			<input type="text" name="rua" class="form-control" id="" value="{{$cliente->Rua}}">
+			<label for="" class="form-label">Bairro</label>
+			<input type="text" name="bairro" class="form-control" id="" value="{{$cliente->Bairro}}">
+			<label for="" class="form-label">Cidade</label>
+			<input type="text" name="cidade" class="form-control" id="" value="{{$cliente->Cidade}}">
+			<label for="" class="form-label">Estado</label>
+			<input type="text" name="estado" class="form-control" id="" value="{{$cliente->Estado}}">
+			<label for="" class="form-label">Pais</label>
+			<input type="text" name="pais" class="form-control" id="" value="{{$cliente->Pais}}">
+			<input type="submit" class="form-label" value="Enviar">
 
-</form>
+		</form>
+		</div>
+	</div>
+</div>
 </body>
 </html>
