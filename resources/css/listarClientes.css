@@ -1,0 +1,18 @@
+.excluir{
+    display: inline-block !important;
+    background-color: red !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: white !important;
+}
+.atualizar{
+    background-color: blue !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    color: white !important;
+    border-radius: 10px !important;
+    margin-left: 5px;
+    margin-top: 10px;
+    display: inline-block !important;
+
+}

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    @vite([
+    'resources/css/app.css',
+    'resources/js/app.js',
+    'resources/css/atualizarCliente.css',
+    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.css'
+    ])
 </head>
 <body>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
@@ -25,7 +32,7 @@
                     </x-nav-link>
                 </div>
 				<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('cadastrarCliente')" :active="request()->routeIs('cadastrarCliente')">
+                    <x-nav-link :href="route('cadastrarClientes')" :active="request()->routeIs('cadastrarClientes')">
                         {{ __('Cadastrar cliente') }}
                     </x-nav-link>
                 </div>
@@ -135,7 +142,9 @@
 			<input type="text" name="estado" class="form-control" id="" value="{{$cliente->Estado}}">
 			<label for="" class="form-label">Pais</label>
 			<input type="text" name="pais" class="form-control" id="" value="{{$cliente->Pais}}">
-			<input type="submit" class="form-label" value="Enviar">
+            <div class="mandar">
+			    <input type="submit" class="btn btn-primary colocar" value="Enviar">
+            </div>
 
 		</form>
 		</div>

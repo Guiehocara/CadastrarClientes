@@ -24,7 +24,7 @@ class Cliente extends Controller
 		return redirect('listarClientes');
     }
     public function listarClientes(){
-        return view('listarClientes', ['clientes'=> ModelsCliente::all()]);
+        return view('listarClientes', ['clientes'=> ModelsCliente::all(), 'cliente' => ModelsCliente::all()]);
     }
     public function excluirCliente($id){
         ModelsCliente::where('id', $id)->delete();
@@ -34,7 +34,7 @@ class Cliente extends Controller
        return view('atualizarCliente', ['cliente'=> ModelsCliente::where('id', $id)->first()]);
     }
 	public function atualizarCliente(Request $request){
-		ModelsCliente::where('id', $request->id)update([
+		ModelsCliente::where('id', $request->id)->update([
 			'Nome' => $request->nome,
 			'Rua'=> $request->rua,
 			'Endereco' => $request->endereco,
@@ -42,9 +42,8 @@ class Cliente extends Controller
 			'Cidade' => $request->cidade,
 			'Estado'=> $request->estado,
 			'Pais' => $request->pais
-		])
+        ]);
 		
 		return redirect('/listarClientes');
 		}
-	}
 }

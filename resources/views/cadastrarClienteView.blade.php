@@ -8,8 +8,9 @@
 @vite([
     'resources/css/app.css',
     'resources/js/app.js',
+    'resources/css/cadastrarCliente.css',
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.css'
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.js'
     ])
 <body>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
@@ -28,6 +29,16 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('cadastrarClientes')" :active="request()->routeIs('cadastrarClientes')">
+                        {{ __('Cadastrar cliente') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('listarClientes')" :active="request()->routeIs('listarClientes')">
+                        {{ __('Listar clientes') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -112,24 +123,32 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
 <form action="/cadastrarCliente" method="post">
     @csrf
-    <label for="" class="form-control">Nome</label>
+    <label for="" class="form-label">Nome</label>
     <input type="text" name="nome" class="form-control" id="">
-    <label for="" class="form-control">Endereco</label>
+    <label for="" class="form-label">Endereco</label>
     <input type="text" name="endereco" class="form-control" id="">
-      <label for="" class="form-control">Rua</label>
+      <label for="" class="form-label">Rua</label>
     <input type="text" name="rua" class="form-control" id="">
-    <label for="" class="form-control">Bairro</label>
+    <label for="" class="form-label">Bairro</label>
     <input type="text" name="bairro" class="form-control" id="">
-    <label for="" class="form-control">Cidade</label>
+    <label for="" class="form-label">Cidade</label>
     <input type="text" name="cidade" class="form-control" id="">
-    <label for="" class="form-control">Estado</label>
+    <label for="" class="form-label">Estado</label>
     <input type="text" name="estado" class="form-control" id="">
-    <label for="" class="form-control">Pais</label>
+    <label for="" class="form-label">Pais</label>
     <input type="text" name="pais" class="form-control" id="">
-    <input type="submit" class="form-control" value="Enviar">
+    <div class="submit">
+        <input type="submit" class="btn btn-primary formulario" value="Enviar">
+    </div>
     
 </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

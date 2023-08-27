@@ -1,0 +1,9 @@
+.submit{
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+.submit .formulario{
+    display: inline-block !important;
+
+}

@@ -23,11 +23,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/cadastrarCliente', [Cliente::class, 'cadastrarClienteView'])->middleware('auth');
+Route::get('/cadastrarCliente', [Cliente::class, 'cadastrarClienteView'])->middleware('auth')->name("cadastrarClientes");
 
 Route::post('/cadastrarCliente', [Cliente::class, 'cadastrarCliente'])->middleware('auth');
 
-Route::get('/listarClientes', [Cliente::class, 'listarClientes'])->middleware('auth');
+Route::get('/listarClientes', [Cliente::class, 'listarClientes'])->middleware('auth')->name("listarClientes");
 
 Route::get('/excluir/{id}', [Cliente::class, 'excluirCliente'])->middleware('auth');
 
