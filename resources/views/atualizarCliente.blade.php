@@ -141,7 +141,33 @@
 			<label for="" class="form-label">Estado</label>
 			<input type="text" name="estado" class="form-control" id="" value="{{$cliente->Estado}}">
 			<label for="" class="form-label">Pais</label>
-			<input type="text" name="pais" class="form-control" id="" value="{{$cliente->Pais}}">
+			<select class="form-select" aria-label="Default select example" name="pais">
+                <option @selected($cliente->Pais == 'SP') value="SP">SP</option>
+                <option @selected($cliente->Pais == 'MG') value="MG">MG</option>
+                <option @selected($cliente->Pais == 'RS') value="RS">RS</option>
+                <option @selected($cliente->Pais == 'RN') value="RN">RN</option>
+                <option @selected($cliente->Pais == 'SE') value="SE">SE</option>
+                <option @selected($cliente->Pais == 'PI') value="PI">PI</option>
+                <option @selected($cliente->Pais == 'MA') value="MA">MA</option>
+                <option @selected($cliente->Pais == 'PA') value="PA">PA</option>
+                <option @selected($cliente->Pais == 'PE') value="PE">PE</option>
+                <option @selected($cliente->Pais == 'AM') value="AM">AM</option>
+                <option @selected($cliente->Pais == 'AC') value="AC">AC</option>
+                <option @selected($cliente->Pais == 'PR') value="PR">PR</option>
+                <option @selected($cliente->Pais == 'RO') value="RO">RO</option>
+                <option @selected($cliente->Pais == 'RR') value="RR">RR</option>
+                <option @selected($cliente->Pais == 'SC') value="SC">SC</option>
+                <option @selected($cliente->Pais == 'ES') value="ES">ES</option>
+                <option @selected($cliente->Pais == 'BH') value="BH">BH</option>
+                <option @selected($cliente->Pais == 'RJ') value="RJ">RJ</option>
+                <option @selected($cliente->Pais == 'GO') value="GO">GO</option>
+                <option @selected($cliente->Pais == 'MT') value="MT">MT</option>
+                <option @selected($cliente->Pais == 'TO') value="TO">TO</option>
+                <option @selected($cliente->Pais == 'AL') value="AL">AL</option>
+                <option @selected($cliente->Pais == 'CE') value="CE">CE</option>
+                <option @selected($cliente->Pais == 'PB') value="PB">PB</option>
+
+            </select>
             <div class="mandar">
 			    <input type="submit" class="btn btn-primary colocar" value="Enviar">
             </div>

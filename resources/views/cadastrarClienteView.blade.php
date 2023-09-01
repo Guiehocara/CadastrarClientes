@@ -141,7 +141,33 @@
     <label for="" class="form-label">Estado</label>
     <input type="text" name="estado" class="form-control" id="">
     <label for="" class="form-label">Pais</label>
-    <input type="text" name="pais" class="form-control" id="">
+    <select class="form-select" aria-label="Default select example" name="pais">
+                <option value="SP">SP</option>
+                <option value="MG">MG</option>
+                <option value="RS">RS</option>
+                <option value="RN">RN</option>
+                <option value="SE">SE</option>
+                <option value="PI">PI</option>
+                <option value="MA">MA</option>
+                <option value="PA">PA</option>
+                <option value="PE">PE</option>
+                <option value="AM">AM</option>
+                <option value="AC">AC</option>
+                <option value="PR">PR</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="ES">ES</option>
+                <option value="BH">BH</option>
+                <option value="RJ">RJ</option>
+                <option value="GO">GO</option>
+                <option value="MT">MT</option>
+                <option value="TO">TO</option>
+                <option value="AL">AL</option>
+                <option value="CE">CE</option>
+                <option value="PB">PB</option>
+
+            </select>
     <div class="submit">
         <input type="submit" class="btn btn-primary formulario" value="Enviar">
     </div>
